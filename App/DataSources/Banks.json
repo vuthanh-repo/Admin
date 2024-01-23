@@ -1,0 +1,102 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "chq_banks",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "chq_bank",
+    "MaxGetRowsCount": 2000,
+    "Name": "Banks",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "chq_accountname": "AccountName",
+      "chq_accountno": "AccountNo",
+      "chq_bank_AsyncOperations": "System Jobs",
+      "chq_bank_BulkDeleteFailures": "Bulk Delete Failures",
+      "chq_bank_DuplicateBaseRecord": "Duplicate Records (chq_bank_DuplicateBaseRecord)",
+      "chq_bank_DuplicateMatchingRecord": "Duplicate Records (chq_bank_DuplicateMatchingRecord)",
+      "chq_bank_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "chq_bank_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "chq_bank_ProcessSession": "Process Sessions",
+      "chq_bank_SyncErrors": "Sync Errors",
+      "chq_bankid": "Bank",
+      "chq_banknumber": "BankNumber",
+      "chq_CompamyId": "CompamyId",
+      "chq_id": "ID",
+      "chq_isdeleted": "IsDeleted",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Banks",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Banks (Views)",
+    "Name": "_chq_bank_views",
+    "RelatedEntityName": "Banks",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "2741cd52-2d2e-4fac-96a3-aac92909d8c4": "Bank Advanced Find View",
+      "3a7750f9-0c6f-4e2a-8ced-115a042ada5c": "Inactive Banks",
+      "73ce97b3-d3e4-4f18-ac3e-d82158df693b": "Bank Associated View",
+      "beab21c1-9bce-4bba-af32-810b5acfd09a": "Bank Lookup View",
+      "c983e810-23bf-4512-b6b4-197b093a9e4c": "Active Banks"
+    }
+  },
+  {
+    "DisplayName": "Status (Banks)",
+    "Name": "chq_bank_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Banks"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Banks",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Banks)",
+    "Name": "chq_bank_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Banks"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Banks",
+    "Type": "OptionSetInfo"
+  }
+]

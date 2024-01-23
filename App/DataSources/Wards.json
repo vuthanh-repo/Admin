@@ -1,0 +1,98 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "chq_wards",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "chq_ward",
+    "MaxGetRowsCount": 500,
+    "Name": "Wards",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "chq_company_Ward_chq_ward": "Companies",
+      "chq_id": "ID",
+      "chq_ward_AsyncOperations": "System Jobs",
+      "chq_ward_BulkDeleteFailures": "Bulk Delete Failures",
+      "chq_ward_DuplicateBaseRecord": "Duplicate Records (chq_ward_DuplicateBaseRecord)",
+      "chq_ward_DuplicateMatchingRecord": "Duplicate Records (chq_ward_DuplicateMatchingRecord)",
+      "chq_ward_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "chq_ward_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "chq_ward_ProcessSession": "Process Sessions",
+      "chq_ward_SyncErrors": "Sync Errors",
+      "chq_wardid": "Ward",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Wards",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Wards (Views)",
+    "Name": "_chq_ward_views",
+    "RelatedEntityName": "Wards",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "71e6a388-bebe-4620-96ca-0bd980c3f35d": "Ward Associated View",
+      "77d90a13-d370-4e14-a660-d1d906baa92b": "Ward Lookup View",
+      "7e51ea89-5c01-44d2-ba0d-2b10adaf2a7a": "Ward Advanced Find View",
+      "af50f970-e12e-4d20-bcff-cd1788bffcd2": "Active Wards",
+      "bd0903ed-7c26-4659-a11d-b704070b0b3e": "Inactive Wards"
+    }
+  },
+  {
+    "DisplayName": "Status (Wards)",
+    "Name": "chq_ward_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Wards"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Wards",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Wards)",
+    "Name": "chq_ward_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Wards"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Wards",
+    "Type": "OptionSetInfo"
+  }
+]

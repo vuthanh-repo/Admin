@@ -1,0 +1,347 @@
+MenuTop As CanvasComponent:
+    CurrentScreen: =App.ActiveScreen
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =App.Height
+    IsSelected: =true
+    Items: |-
+        =Table(
+            {
+                Label: "Setting",
+                ID: 1,
+                Icon: Icon.Settings,
+                SubMenu: [
+                    {
+                        Label: "1. Company",
+                        Screen: ScrCompany,
+                        ID: 1
+                    },
+                    {
+                        Label: "2. Currencies",
+                        Screen: ScrCurrencies,
+                        ID: 1
+                    }
+                ]
+            },
+            {
+                Label: "Departments",
+                ID: 2,
+                Screen: ScrDepartments,
+                Icon: Icon.Settings
+            },
+            
+            {
+                Label: "Job Position",
+                ID: 3,
+                Screen: ScrJobPosition,
+                Icon: Icon.Settings
+            },
+            {
+                Label: "Employees",
+                ID: 4,
+                Icon: Icon.Settings
+            },{
+               Label: "Contracts",
+                ID: 5,
+                Icon: Icon.Settings,
+                SubMenu: [
+                    {
+                        Label: "1. Contract types",
+                        Screen: ScrCompany,
+                        ID: 5
+                    },
+                    {
+                        Label: "2. Contract Stages",
+                        Screen: ScrCurrencies,
+                        ID: 5
+                    }
+                ]
+            },
+            {
+               Label: "Project",
+                ID: 6,
+                Icon: Icon.Settings,
+                SubMenu: [
+                    {
+                        Label: "1. Project types",
+                        Screen: ScrCompany,
+                        ID: 6
+                    },
+                    {
+                        Label: "2. Project Stages",
+                        Screen: ScrCurrencies,
+                        ID: 6
+                    }
+                ]
+            },{
+                Label: "Revenue - Cost category",
+                ID: 7,
+                Icon: Icon.Settings
+            },
+            {
+               Label: "Approval",
+                ID: 8,
+                Icon: Icon.Settings,
+                SubMenu: [
+                    {
+                        Label: "1. ApprovalCategory",
+                        Screen: ScrCompany,
+                        ID: 8
+                    },
+                    {
+                        Label: "2. Approval Types",
+                        Screen: ScrCurrencies,
+                        ID: 8
+                    }
+                ]
+            }
+        )
+    Width: |-
+        =//If(varOpenSubMenu = true,250,80)
+        250
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Container2 As groupContainer.horizontalAutoLayoutContainer:
+        DropShadow: =DropShadow.Regular
+        Fill: =RGBA(133, 131, 131, 0)
+        Height: =768
+        LayoutMode: =LayoutMode.Auto
+        Width: =250
+        ZIndex: =1
+
+        Container9 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(168, 167, 167, 0.12)
+            FillPortions: =0
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =80
+            ZIndex: =1
+
+            "Gallery2 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver5.0'":
+                Default: =First(MenuTop.Items)
+                DelayItemLoading: =true
+                Height: =768
+                Items: =MenuTop.Items
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplateFill: |-
+                    =RGBA(0, 0, 0, 0)
+                    //If(ThisItem.IsSelected,RGBA(255, 255, 255, 1),RGBA(0, 0, 0, 0))
+                TemplatePadding: =0
+                TemplateSize: =80
+                Width: =Parent.Width
+                ZIndex: =1
+
+                TextCanvas4 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: |-
+                        =//RGBA(87, 86, 86, 1)
+                        //If(ThisItem.IsSelected,RGBA(15, 108, 189, 1),RGBA(87, 86, 86, 1))
+                        //RGBA(87, 86, 86, 1)
+                        //If(ThisItem.IsSelected,RGBA(15, 108, 189, 1),RGBA(87, 86, 86, 1))
+                        If(
+                            ThisItem.ID = varSubMenu.ID ||ThisItem.ID in varSubMenu.SubMenu.ID ,
+                           RGBA(
+                                15,
+                                108,
+                                189,
+                                1
+                            ),
+                            RGBA(
+                                87,
+                                86,
+                                86,
+                                1
+                            )
+                             
+                        )
+                    Height: =35
+                    Size: =12
+                    Text: =ThisItem.Label
+                    Width: =78
+                    Wrap: =false
+                    X: =2
+                    Y: =45
+                    ZIndex: =2
+
+                Icon2 As icon.Add:
+                    Color: |-
+                        =//RGBA(87, 86, 86, 1)
+                        //If(ThisItem.IsSelected,RGBA(15, 108, 189, 1),RGBA(87, 86, 86, 1))
+                        If(
+                            ThisItem.ID = varSubMenu.ID ||ThisItem.ID in varSubMenu.SubMenu.ID,
+                           RGBA(
+                                15,
+                                108,
+                                189,
+                                1
+                            ),
+                            RGBA(
+                                87,
+                                86,
+                                86,
+                                1
+                            )
+                             
+                        )
+                    Height: =30
+                    Icon: =ThisItem.Icon
+                    Width: =30
+                    X: =25
+                    Y: =13
+                    ZIndex: =3
+
+                Button1 As button:
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =80
+                    HoverBorderColor: =
+                    HoverColor: =RGBA(0, 0, 0, 0)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    OnSelect: |-
+                        =If(IsBlank(ThisItem.SubMenu),Navigate(ThisItem.Screen));
+                        Set(
+                            varSubMenu,
+                            ThisItem
+                        );
+                        //Set(varOpenSubMenu,!varOpenSubMenu)
+                    PressedBorderColor: =
+                    PressedColor: =
+                    PressedFill: =
+                    Text: =""
+                    Width: =Parent.Width
+                    X: =TextCanvas4.X
+                    ZIndex: =4
+
+                Rectangle6 As rectangle:
+                    Fill: =RGBA(15, 108, 189, 1)
+                    Height: =65
+                    OnSelect: =Select(Parent)
+                    Visible: |+
+                        =//If(ThisItem.IsSelected,true,false)
+                        If(
+                            ThisItem.ID = varSubMenu.ID ||ThisItem.ID in varSubMenu.SubMenu.ID ,
+                            true,false
+                        )
+                        
+                    Width: =3
+                    Y: =6
+                    ZIndex: =5
+
+        Container7 As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.Semibold
+            Fill: =RGBA(130, 130, 130, 0)
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =150
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: |-
+                =//varOpenSubMenu
+                true
+            ZIndex: =2
+
+            Container8 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.None
+                Fill: =RGBA(168, 167, 167, 0.1)
+                FillPortions: =0
+                Height: =60
+                LayoutMinHeight: =100
+                LayoutMinWidth: =170
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =1
+
+                Rectangle2 As rectangle:
+                    Fill: =RGBA(214, 221, 224, 1)
+                    Height: =1
+                    Width: =152
+                    X: =6
+                    Y: =59
+                    ZIndex: =1
+
+                TextCanvas3 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =38
+                    Size: =20
+                    Text: =varSubMenu.Label
+                    Weight: ='TextCanvas.Weight'.Bold
+                    Width: =153
+                    Wrap: =false
+                    X: =10
+                    Y: =10
+                    ZIndex: =2
+
+            Container10 As groupContainer.manualLayoutContainer:
+                Fill: =RGBA(168, 167, 167, 0.1)
+                LayoutMinHeight: =100
+                LayoutMinWidth: =170
+                ZIndex: =2
+
+                "Gallery3 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver5.0'":
+                    DelayItemLoading: =true
+                    Height: =708
+                    Items: =varSubMenu.SubMenu
+                    Layout: =Layout.Vertical
+                    LoadingSpinner: =LoadingSpinner.Data
+                    TemplateFill: |-
+                        =If(
+                            //ThisItem.IsSelected,
+                            ThisItem.Screen.Name = MenuTop.CurrentScreen.Name,
+                           RGBA(255, 255, 255, 1),
+                            RGBA(
+                                0,
+                                0,
+                                0,
+                                0
+                            )
+                        )
+                    TemplatePadding: =0
+                    TemplateSize: =35
+                    Width: =160
+                    X: =5
+                    ZIndex: =1
+
+                    TextCanvas5 As Text:
+                        Align: ='TextCanvas.Align'.Start
+                        DisplayMode: =DisplayMode.Edit
+                        FontColor: |-
+                            =//RGBA(87, 86, 86, 1)
+                            
+                            If(ThisItem.Screen.Name = MenuTop.CurrentScreen.Name,Color.Black,RGBA(87, 86, 86, 1))
+                        Height: =35
+                        Text: =ThisItem.Label
+                        Weight: ='TextCanvas.Weight'.Semibold
+                        Width: =155
+                        X: =15
+                        Y: =0
+                        ZIndex: =1
+
+                    Button5 As button:
+                        Color: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =35
+                        HoverBorderColor: =
+                        HoverColor: =RGBA(0, 0, 0, 0)
+                        HoverFill: =
+                        OnSelect: =Select(Parent);Navigate(ThisItem.Screen)
+                        PressedBorderColor: =
+                        PressedColor: =
+                        PressedFill: =
+                        Text: =""
+                        Y: =TextCanvas5.Y
+                        ZIndex: =2
+

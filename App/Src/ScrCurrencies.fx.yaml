@@ -1,0 +1,691 @@
+ScrCurrencies As screen:
+
+    Container4 As groupContainer.horizontalAutoLayoutContainer:
+        Height: =768
+        LayoutMode: =LayoutMode.Auto
+        Width: =1366
+        ZIndex: =1
+
+        Container5 As groupContainer.manualLayoutContainer:
+            FillPortions: =0
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            Width: =250
+            ZIndex: =1
+
+            MenuTop_2 As MenuTop:
+
+        Container18 As groupContainer.verticalAutoLayoutContainer:
+            Fill: =varColor
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =2
+
+            Container12_1 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =60
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =1
+
+                Rectangle5_1 As rectangle:
+                    Fill: =varBoder
+                    Height: =1
+                    Width: =1116
+                    Y: =59
+                    ZIndex: =1
+
+                TextCanvas1_1 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =40
+                    Size: =20
+                    Text: ="2. Setting - Currencies"
+                    Weight: ='TextCanvas.Weight'.Bold
+                    Width: =242
+                    X: =20
+                    Y: =10
+                    ZIndex: =2
+
+            Container20 As groupContainer.manualLayoutContainer:
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =2
+
+                Container8_3 As groupContainer.manualLayoutContainer:
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =496
+                    RadiusBottomLeft: =5
+                    RadiusBottomRight: =5
+                    RadiusTopLeft: =5
+                    RadiusTopRight: =5
+                    Width: =1006
+                    X: =50
+                    Y: =155
+                    ZIndex: =1
+
+                    "Gallery1_2 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver5.0'":
+                        DelayItemLoading: =true
+                        Height: =495
+                        Items: =Currencies
+                        Layout: =Layout.Vertical
+                        LoadingSpinner: =LoadingSpinner.Data
+                        OnSelect: =
+                        TemplateFill: |-
+                            =If(
+                                ThisItem.IsSelected,RGBA(230, 240, 252, 0.78),
+                                RGBA(
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                )
+                            )
+                        TemplatePadding: =0
+                        TemplateSize: =31
+                        Width: =1006
+                        ZIndex: =1
+
+                        Separator2_2 As rectangle:
+                            Fill: =varBoder
+                            Height: =1
+                            OnSelect: =Select(Parent)
+                            Width: =Parent.TemplateWidth
+                            Y: =Parent.TemplateHeight - Self.Height
+                            ZIndex: =1
+
+                        TextCanvas3_7 As Text:
+                            Align: ='TextCanvas.Align'.Center
+                            DisplayMode: =DisplayMode.Edit
+                            FontColor: =
+                            Height: =31
+                            Text: =ThisItem.'Currency (chq_currency)'
+                            Weight: ='TextCanvas.Weight'.Semibold
+                            Width: =TextCanvas2_8.Width
+                            X: =TextCanvas2_8.X
+                            Y: =0
+                            ZIndex: =2
+
+                        TextCanvas3_8 As Text:
+                            Align: ='TextCanvas.Align'.Center
+                            DisplayMode: =DisplayMode.Edit
+                            FontColor: =
+                            Height: =31
+                            Text: =ThisItem.Symbol
+                            Weight: ='TextCanvas.Weight'.Regular
+                            Width: =TextCanvas2_9.Width
+                            X: =TextCanvas2_9.X
+                            Y: =0
+                            ZIndex: =3
+
+                        TextCanvas3_9 As Text:
+                            Align: ='TextCanvas.Align'.Center
+                            DisplayMode: =DisplayMode.Edit
+                            FontColor: =
+                            Height: =31
+                            Size: =14
+                            Text: =ThisItem.CountryName
+                            Weight: ='TextCanvas.Weight'.Regular
+                            Width: =TextCanvas2_10.Width
+                            X: =TextCanvas2_10.X
+                            Y: =0
+                            ZIndex: =4
+
+                        Button3 As button:
+                            Color: =RGBA(0, 0, 0, 0)
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =31
+                            HoverBorderColor: =
+                            HoverColor: =RGBA(0, 0, 0, 0)
+                            HoverFill: =
+                            OnSelect: |-
+                                =UpdateContext({varItemCurrency: ThisItem,varOpenNewCurrencies: true})
+                            PressedBorderColor: =
+                            PressedColor: =
+                            PressedFill: =
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Text: =""
+                            Width: =830
+                            X: =30
+                            ZIndex: =5
+
+                        Toggle1 As Toggle:
+                            BasePaletteColor: =
+                            DisplayMode: =DisplayMode.Edit
+                            FontColor: =
+                            Height: =31
+                            Label: =""
+                            OnCheck: =false
+                            OnSelect: =Select(Parent)
+                            OnUncheck: =false
+                            Width: =51
+                            X: =860
+                            Y: =0
+                            ZIndex: =6
+
+                        CheckboxCanvas2 As Checkbox:
+                            BasePaletteColor: =
+                            Checked: =If(!IsBlank(LookUp(colCurrency,ID = ThisItem.ID,ID)),true,false)
+                            DisplayMode: =DisplayMode.Edit
+                            FontColor: =
+                            Height: =30
+                            Label: =""
+                            OnCheck: =Collect(colCurrency,ThisItem)
+                            OnSelect: =Select(Parent)
+                            OnUncheck: =Remove(colCurrency,ThisItem)
+                            Width: =CheckboxCanvas1.Width
+                            X: =CheckboxCanvas1.X
+                            Y: =0
+                            ZIndex: =7
+
+                Container6_7 As groupContainer.horizontalAutoLayoutContainer:
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =30
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =1006
+                    X: =50
+                    Y: =125
+                    ZIndex: =2
+
+                    CheckboxCanvas1 As Checkbox:
+                        BasePaletteColor: =
+                        Checked: =If(CountRows(colCurrency) = CountRows(Gallery1_2.AllItems),true,false)
+                        DisplayMode: =DisplayMode.Edit
+                        FontColor: =
+                        Height: =30
+                        Label: =""
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =160
+                        OnCheck: =ClearCollect(colCurrency,Gallery1_2.AllItems)
+                        OnUncheck: =Clear(colCurrency)
+                        Visible: =true
+                        Width: =30
+                        X: =0
+                        Y: =0
+                        ZIndex: =1
+
+                    TextCanvas2_8 As Text:
+                        Align: ='TextCanvas.Align'.Center
+                        AutoHeight: =false
+                        DisplayMode: =DisplayMode.Edit
+                        FillPortions: =1
+                        FontColor: =
+                        Height: =Container6_7.Height
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        Text: ="Currency"
+                        Weight: ='TextCanvas.Weight'.Semibold
+                        Width: =96
+                        X: =0
+                        Y: =0
+                        ZIndex: =2
+
+                    TextCanvas2_9 As Text:
+                        Align: ='TextCanvas.Align'.Center
+                        DisplayMode: =DisplayMode.Edit
+                        FillPortions: =1
+                        FontColor: =
+                        Height: =Container6_7.Height
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        Text: ="Symbol"
+                        Weight: ='TextCanvas.Weight'.Semibold
+                        Width: =96
+                        X: =0
+                        Y: =0
+                        ZIndex: =3
+
+                    TextCanvas2_10 As Text:
+                        Align: ='TextCanvas.Align'.Center
+                        DisplayMode: =DisplayMode.Edit
+                        FillPortions: =1
+                        FontColor: =
+                        Height: =Container6_7.Height
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        Text: ="Country Name"
+                        Weight: ='TextCanvas.Weight'.Semibold
+                        Width: =96
+                        X: =0
+                        Y: =0
+                        ZIndex: =4
+
+                    TextCanvas2_11 As Text:
+                        Align: ='TextCanvas.Align'.Center
+                        AutoHeight: =false
+                        DisplayMode: =DisplayMode.Edit
+                        FillPortions: =1
+                        FontColor: =
+                        Height: =Container6_7.Height
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        Text: ="Active"
+                        Weight: ='TextCanvas.Weight'.Semibold
+                        Width: =96
+                        X: =0
+                        Y: =0
+                        ZIndex: =5
+
+                ButtonCanvas3 As Button:
+                    BasePaletteColor: =
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =32
+                    OnSelect: |-
+                        =UpdateContext({varOpenNewCurrencies: true,varItemCurrency: Defaults(Currencies)})
+                    Text: ="New"
+                    Width: =96
+                    X: =960
+                    Y: =78
+                    ZIndex: =3
+
+                ButtonCanvas3_1 As Button:
+                    Appearance: ='ButtonCanvas.Appearance'.Secondary
+                    BasePaletteColor: =
+                    DisplayMode: =If(CountRows(colCurrency)>0,DisplayMode.Edit,DisplayMode.Disabled)
+                    FontColor: =
+                    Height: =32
+                    OnSelect: |-
+                        =UpdateContext({varOpenDeleteItem: true})
+                    Text: ="Delete"
+                    Width: =96
+                    X: =839
+                    Y: =78
+                    ZIndex: =4
+
+                "txtSearchByStageName_1 As 'Text input'":
+                    BasePaletteColor: =RGBA(40, 112, 134, 1)
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =Font.'Segoe UI'
+                    FontColor: =RGBA(13, 50, 61, 1)
+                    FontWeight: =FontWeight.Semibold
+                    Height: =34
+                    Placeholder: ="🔎   Search stage name"
+                    Width: =300
+                    X: =50
+                    Y: =76
+                    ZIndex: =5
+
+    Container21 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(0, 0, 0, 0.06)
+        Height: =768
+        Visible: =varOpenNewCurrencies
+        Width: =1366
+        ZIndex: =2
+
+        Button2 As button:
+            Color: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =768
+            HoverBorderColor: =
+            HoverColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =
+            OnSelect: |-
+                =UpdateContext({varOpenNewCurrencies: false})
+            PressedBorderColor: =
+            PressedColor: =
+            PressedFill: =
+            Text: =""
+            Width: =1366
+            ZIndex: =1
+
+        Container22 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.Bold
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =262
+            Width: =798
+            X: =299
+            Y: =213
+            ZIndex: =2
+
+            Form2 As form.PowerApps_CoreControls_Form:
+                DataSource: =Currencies
+                Height: =162
+                Item: =varItemCurrency
+                NumberOfColumns: =2
+                UseFluentV9Cards: =true
+                Width: =798
+                Y: =46
+                ZIndex: =1
+
+                Currency_DataCard2 As typedDataCard.fluentV9TextualEditCard:
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="chq_currency"
+                    Default: =ThisItem.'Currency (chq_currency)'
+                    DisplayMode: =Parent.DisplayMode
+                    DisplayName: =DataSourceInfo([@Currencies],DataSourceInfo.DisplayName,"chq_currency")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =70
+                    MaxLength: =DataSourceInfo([@Currencies], DataSourceInfo.MaxLength, "chq_currency")
+                    Required: =true
+                    Update: =DataCardValue15.Value
+                    Width: =399
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+                    DataCardKey16 As Text:
+                        DisplayMode: =DisplayMode.Edit
+                        FontColor: =
+                        Height: =22
+                        Text: =Parent.DisplayName
+                        Weight: ='TextCanvas.Weight'.Semibold
+                        Width: =Parent.Width - 48
+                        Wrap: =false
+                        X: =24
+                        Y: =10
+                        ZIndex: =1
+
+                    "DataCardValue15 As 'Text input'":
+                        AccessibleLabel: =Parent.DisplayName
+                        BasePaletteColor: =
+                        DisplayMode: =Parent.DisplayMode
+                        FontColor: =
+                        Height: =32
+                        Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                        Required: =Parent.Required
+                        ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                        Value: =Parent.Default
+                        Width: =Parent.Width - 48
+                        X: =24
+                        Y: =DataCardKey16.Y + DataCardKey16.Height + 4
+                        ZIndex: =2
+
+                    ErrorMessage13 As Text:
+                        DisplayMode: =DisplayMode.Edit
+                        FontColor: =
+                        Height: =30
+                        Text: =Parent.Error
+                        Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                        Width: =Parent.Width - 48
+                        Wrap: =true
+                        X: =24
+                        Y: =DataCardValue15.Y + DataCardValue15.Height
+                        ZIndex: =3
+
+                    StarVisible13 As Text:
+                        Align: ='TextCanvas.Align'.Center
+                        DisplayMode: =DisplayMode.Edit
+                        FontColor: =
+                        Height: =30
+                        Text: ="*"
+                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                        Width: =30
+                        X: =0
+                        Y: =DataCardKey16.Y
+                        ZIndex: =4
+
+                Symbol_DataCard1 As typedDataCard.fluentV9TextualEditCard:
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="chq_symbol"
+                    Default: =ThisItem.Symbol
+                    DisplayMode: =Parent.DisplayMode
+                    DisplayName: =DataSourceInfo([@Currencies],DataSourceInfo.DisplayName,"chq_symbol")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =70
+                    MaxLength: =DataSourceInfo([@Currencies], DataSourceInfo.MaxLength, "chq_symbol")
+                    Required: =false
+                    Update: =DataCardValue16.Value
+                    Width: =399
+                    X: =1
+                    Y: =0
+                    ZIndex: =1
+
+                    DataCardKey17 As Text:
+                        DisplayMode: =DisplayMode.Edit
+                        FontColor: =
+                        Height: =22
+                        Text: =Parent.DisplayName
+                        Weight: ='TextCanvas.Weight'.Semibold
+                        Width: =Parent.Width - 48
+                        Wrap: =false
+                        X: =24
+                        Y: =10
+                        ZIndex: =1
+
+                    "DataCardValue16 As 'Text input'":
+                        AccessibleLabel: =Parent.DisplayName
+                        BasePaletteColor: =
+                        DisplayMode: =Parent.DisplayMode
+                        FontColor: =
+                        Height: =32
+                        Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                        Required: =Parent.Required
+                        ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                        Value: =Parent.Default
+                        Width: =Parent.Width - 48
+                        X: =24
+                        Y: =DataCardKey17.Y + DataCardKey17.Height + 4
+                        ZIndex: =2
+
+                    ErrorMessage14 As Text:
+                        DisplayMode: =DisplayMode.Edit
+                        FontColor: =
+                        Height: =30
+                        Text: =Parent.Error
+                        Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                        Width: =Parent.Width - 48
+                        Wrap: =true
+                        X: =24
+                        Y: =DataCardValue16.Y + DataCardValue16.Height
+                        ZIndex: =3
+
+                    StarVisible14 As Text:
+                        Align: ='TextCanvas.Align'.Center
+                        DisplayMode: =DisplayMode.Edit
+                        FontColor: =
+                        Height: =30
+                        Text: ="*"
+                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                        Width: =30
+                        X: =0
+                        Y: =DataCardKey17.Y
+                        ZIndex: =4
+
+                CountryName_DataCard1 As typedDataCard.fluentV9TextualMultiLineEditCard:
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="chq_countryname"
+                    Default: =ThisItem.CountryName
+                    DisplayMode: =Parent.DisplayMode
+                    DisplayName: =DataSourceInfo([@Currencies],DataSourceInfo.DisplayName,"chq_countryname")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =70
+                    Required: =false
+                    Update: =DataCardValue17.Value
+                    Width: =399
+                    X: =0
+                    Y: =1
+                    ZIndex: =1
+
+                    DataCardKey18 As Text:
+                        DisplayMode: =DisplayMode.Edit
+                        FontColor: =
+                        Height: =22
+                        Text: =Parent.DisplayName
+                        Weight: ='TextCanvas.Weight'.Semibold
+                        Width: =Parent.Width - 48
+                        Wrap: =false
+                        X: =24
+                        Y: =10
+                        ZIndex: =1
+
+                    "DataCardValue17 As 'Text input'":
+                        AccessibleLabel: =Parent.DisplayName
+                        BasePaletteColor: =
+                        DisplayMode: =Parent.DisplayMode
+                        FontColor: =
+                        Height: =32
+                        Mode: ='TextInputCanvas.Mode'.Multiline
+                        Required: =Parent.Required
+                        ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                        Value: =Parent.Default
+                        Width: =Parent.Width - 48
+                        X: =24
+                        Y: =DataCardKey18.Y + DataCardKey18.Height + 4
+                        ZIndex: =2
+
+                    ErrorMessage15 As Text:
+                        DisplayMode: =DisplayMode.Edit
+                        FontColor: =
+                        Height: =30
+                        Text: =Parent.Error
+                        Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                        Width: =Parent.Width - 48
+                        Wrap: =true
+                        X: =24
+                        Y: =DataCardValue17.Y + DataCardValue17.Height
+                        ZIndex: =3
+
+                    StarVisible15 As Text:
+                        Align: ='TextCanvas.Align'.Center
+                        DisplayMode: =DisplayMode.Edit
+                        FontColor: =
+                        Height: =30
+                        Text: ="*"
+                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                        Width: =30
+                        X: =0
+                        Y: =DataCardKey18.Y
+                        ZIndex: =4
+
+                Active_DataCard4 As typedDataCard.fluentV9ComboBoxOptionSetSingleEditCard:
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="chq_active"
+                    Default: =ThisItem.Active
+                    DisplayMode: =Parent.DisplayMode
+                    DisplayName: =DataSourceInfo([@Currencies],DataSourceInfo.DisplayName,"chq_active")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =70
+                    Required: =false
+                    Update: =DataCardValue21.Selected.Value
+                    Width: =399
+                    X: =1
+                    Y: =1
+                    ZIndex: =1
+
+                    DataCardKey22 As Text:
+                        DisplayMode: =DisplayMode.Edit
+                        FontColor: =
+                        Height: =22
+                        Text: =Parent.DisplayName
+                        Weight: ='TextCanvas.Weight'.Semibold
+                        Width: =Parent.Width - 48
+                        Wrap: =false
+                        X: =24
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue21 As Combobox.pcfdataset:
+                        AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                        DefaultSelectedItems: =Choices(varItemCurrency.Active)
+                        DisplayMode: =Parent.DisplayMode
+                        Height: =32
+                        Items: =Choices('Active (Currencies)')
+                        ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                        Width: =Parent.Width - 48
+                        X: =24
+                        Y: =DataCardKey22.Y + DataCardKey22.Height + 4
+                        ZIndex: =2
+
+                    ErrorMessage18 As Text:
+                        DisplayMode: =DisplayMode.Edit
+                        FontColor: =
+                        Height: =30
+                        Text: =Parent.Error
+                        Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                        Width: =Parent.Width - 48
+                        Wrap: =true
+                        X: =24
+                        Y: =DataCardValue21.Y + DataCardValue21.Height
+                        ZIndex: =3
+
+                    StarVisible18 As Text:
+                        Align: ='TextCanvas.Align'.Center
+                        DisplayMode: =DisplayMode.Edit
+                        FontColor: =
+                        Height: =20
+                        Text: ="*"
+                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                        Width: =30
+                        X: =0
+                        Y: =DataCardKey22.Y
+                        ZIndex: =4
+
+            Rectangle3 As rectangle:
+                Fill: =RGBA(15, 84, 140, 1)
+                Height: =1
+                Width: =202
+                X: =14
+                Y: =45
+                ZIndex: =2
+
+            TextCanvas7 As Text:
+                DisplayMode: =DisplayMode.Edit
+                FontColor: =
+                Height: =33
+                Size: =18
+                Text: =If(IsBlank(varItemCurrency),"Add new Currency","Edit item Currency")
+                Weight: ='TextCanvas.Weight'.Bold
+                Width: =202
+                X: =14
+                Y: =13
+                ZIndex: =3
+
+            ButtonCanvas4 As Button:
+                BasePaletteColor: =
+                DisplayMode: =DisplayMode.Edit
+                FontColor: =
+                Height: =32
+                Text: ="Save"
+                Width: =96
+                X: =675
+                Y: =220
+                ZIndex: =4
+
+            ButtonCanvas4_1 As Button:
+                Appearance: ='ButtonCanvas.Appearance'.Secondary
+                BasePaletteColor: =
+                DisplayMode: =DisplayMode.Edit
+                FontColor: =
+                Height: =32
+                OnSelect: |-
+                    =UpdateContext({varOpenNewCurrencies: false})
+                Text: ="Discard"
+                Width: =96
+                X: =557
+                Y: =220
+                ZIndex: =5
+
+    Container21_1 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(0, 0, 0, 0.06)
+        Height: =768
+        Visible: =varOpenDeleteItem
+        Width: =1366
+        ZIndex: =3
+
+        Button4 As button:
+            Color: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =768
+            Text: ="Button"
+            Width: =1366
+            ZIndex: =1
+

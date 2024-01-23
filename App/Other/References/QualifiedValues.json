@@ -1,0 +1,88 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_chq_bank_forms",
+      "Namespace": "Banks (Forms)",
+      "Values": {
+        "Information": "484157ca-8c95-40df-bf11-8d414fbd2027"
+      }
+    },
+    {
+      "Kind": "default.cds_chq_company_forms",
+      "Namespace": "Companies (Forms)",
+      "Values": {
+        "Information": "7dfcc6c0-84d8-4ff0-a9c7-650b963eeeda"
+      }
+    },
+    {
+      "Kind": "default.cds_chq_currency_forms",
+      "Namespace": "Currencies (Forms)",
+      "Values": {
+        "Information": "8cbb1930-6ed0-428e-b879-fabf17fb7714"
+      }
+    },
+    {
+      "Kind": "default.cds_chq_district_forms",
+      "Namespace": "Districts (Forms)",
+      "Values": {
+        "Information": "bb49cc3a-cb0d-4c80-bc88-f774b16f15a1"
+      }
+    },
+    {
+      "Kind": "default.cds_chq_group_forms",
+      "Namespace": "Groups (Forms)",
+      "Values": {
+        "Information": "1032d11e-82bb-49f0-9ff3-a3d02db5b6d6"
+      }
+    },
+    {
+      "Kind": "default.cds_chq_project_stage_forms",
+      "Namespace": "Project_Stages (Forms)",
+      "Values": {
+        "Information": "f92bd695-2f21-41fd-8a78-ecf547e4db14"
+      }
+    },
+    {
+      "Kind": "default.cds_chq_province_forms",
+      "Namespace": "Provinces (Forms)",
+      "Values": {
+        "Information": "d1ba2941-f6a6-4834-8070-a2d7149ce11d"
+      }
+    },
+    {
+      "Kind": "default.cds_chq_ward_forms",
+      "Namespace": "Wards (Forms)",
+      "Values": {
+        "Information": "64fb29ae-726e-419d-8251-b6308cafdad9"
+      }
+    },
+    {
+      "Kind": "default.cds_cdm_company_forms",
+      "Namespace": "Companies (Forms)1",
+      "Values": {
+        "Information": "3e586721-906a-45fa-b83b-9b270a2b20d3"
+      }
+    },
+    {
+      "Kind": "default.cds_chq_company_forms",
+      "Namespace": "Companies (Forms)11",
+      "Values": {
+        "Information": "7dfcc6c0-84d8-4ff0-a9c7-650b963eeeda"
+      }
+    },
+    {
+      "Kind": "default.cds_chq_company_forms",
+      "Namespace": "Companies (Forms)2",
+      "Values": {
+        "Information": "7dfcc6c0-84d8-4ff0-a9c7-650b963eeeda"
+      }
+    },
+    {
+      "Kind": "default.cds_chq_company_forms",
+      "Namespace": "Companies (Forms)3",
+      "Values": {
+        "Information": "7dfcc6c0-84d8-4ff0-a9c7-650b963eeeda"
+      }
+    }
+  ]
+}

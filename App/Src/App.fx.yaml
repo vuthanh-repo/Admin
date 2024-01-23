@@ -1,0 +1,50 @@
+App As appinfo:
+    BackEnabled: =true
+    OnStart: |-
+        =Set(
+            varColor,
+            RGBA(
+                247,
+                247,
+                247,
+                1
+            )
+        );
+        Set(
+            varBoder,
+            RGBA(
+                219,
+                219,
+                219,
+                1
+            )
+        );
+        Set(
+            varSubMenu,
+            {
+                Label: "Setting",
+                ID: 1,
+                Icon: Icon.Settings,
+                SubMenu: [
+                    {
+                        Label: "1. Company",
+                        Screen: ScrCompany,
+                        ID: 1
+                    },
+                    {
+                        Label: "2. Currencies",
+                        Screen: ScrCurrencies,
+                        ID: 1
+                    }
+                ]
+            }
+        )
+    Theme: =PowerAppsTheme
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

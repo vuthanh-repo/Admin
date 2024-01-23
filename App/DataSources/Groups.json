@@ -1,0 +1,101 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "chq_groups",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "chq_group",
+    "MaxGetRowsCount": 2000,
+    "Name": "Groups",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "chq_CompanyId": "CompanyId",
+      "chq_description": "Description",
+      "chq_group_AsyncOperations": "System Jobs",
+      "chq_group_BulkDeleteFailures": "Bulk Delete Failures",
+      "chq_group_DuplicateBaseRecord": "Duplicate Records (chq_group_DuplicateBaseRecord)",
+      "chq_group_DuplicateMatchingRecord": "Duplicate Records (chq_group_DuplicateMatchingRecord)",
+      "chq_group_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "chq_group_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "chq_group_ProcessSession": "Process Sessions",
+      "chq_group_SyncErrors": "Sync Errors",
+      "chq_groupid": "Group",
+      "chq_groupname": "GroupName",
+      "chq_id": "ID",
+      "chq_isdeleted": "IsDeleted",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Groups",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Groups (Views)",
+    "Name": "_chq_group_views",
+    "RelatedEntityName": "Groups",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "1287d259-a33c-4969-82b6-e6a4d15b0a75": "Group Lookup View",
+      "131ec635-9891-426c-9c90-8f1990c3f936": "Group Advanced Find View",
+      "782b18a2-8962-4c31-b33f-7febfd36860f": "Active Groups",
+      "bb586497-3111-47f3-b9fb-0bd98b6fd4a6": "Group Associated View",
+      "d8417b8a-cab7-4c65-92e4-ca0f282f4868": "Inactive Groups"
+    }
+  },
+  {
+    "DisplayName": "Status (Groups)",
+    "Name": "chq_group_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Groups"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Groups",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Groups)",
+    "Name": "chq_group_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Groups"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Groups",
+    "Type": "OptionSetInfo"
+  }
+]

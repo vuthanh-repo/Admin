@@ -1,0 +1,23 @@
+TopMenu As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =640
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Label1 As label:
+        Text: ="My company name"
+        Width: =360
+        X: =65
+        ZIndex: =1
+
+    "Progress1 As 'Progress Bar'":
+        BasePaletteColor: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =45
+        Width: =450
+        X: =44
+        Y: =100
+        ZIndex: =2
+

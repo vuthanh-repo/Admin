@@ -1,0 +1,10 @@
+Screen2 As screen:
+
+    DatePicker1 As datepicker:
+        X: =600
+        Y: =65
+        ZIndex: =1
+
+    MenuTop_ As MenuTop:
+        ZIndex: =2
+
